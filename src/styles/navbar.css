@@ -1,0 +1,188 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e7eee9;
+}
+
+.navbar-container {
+  width: min(1180px, 92%);
+  min-height: 76px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #143d2e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  background: #176b4d;
+  color: white;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.brand-text {
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.brand-text span {
+  font-weight: 500;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-link {
+  position: relative;
+
+  padding: 10px 15px;
+
+  color: #506259;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #176b4d;
+  background: #f0f7f3;
+}
+
+.nav-link.active {
+  color: #176b4d;
+  background: #edf7f1;
+}
+
+.nav-cta {
+  margin-left: 7px;
+
+  padding: 11px 17px;
+
+  color: white;
+  background: #176b4d;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #0f543b;
+  transform: translateY(-1px);
+}
+
+.menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #dce8e1;
+  border-radius: 10px;
+
+  background: white;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-button span {
+  width: 20px;
+  height: 2px;
+
+  background: #173f30;
+
+  transition: 0.2s ease;
+}
+
+@media (max-width: 760px) {
+  .navbar-container {
+    min-height: 68px;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .navigation {
+    position: absolute;
+
+    top: 68px;
+    left: 0;
+    right: 0;
+
+    padding: 14px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5eee9;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    box-shadow: 0 15px 35px rgba(25, 60, 45, 0.08);
+  }
+
+  .navigation-open {
+    display: flex;
+  }
+
+  .nav-link,
+  .nav-cta {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+
+    text-align: center;
+  }
+
+  .nav-cta {
+    margin-top: 5px;
+  }
+}
