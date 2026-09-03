@@ -1,24 +1,284 @@
-.about-container {
-  max-width: 700px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-  font-family: system-ui, -apple-system, sans-serif;
+.about-page {
+  color: #18382b;
+  background: white;
 }
 
-.profile-card {
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.about-hero {
+  padding: 100px 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(42, 131, 89, 0.12),
+      transparent 30%
+    ),
+    #f3f8f5;
+}
+
+.about-hero-container {
+  width: min(950px, 92%);
+  margin: auto;
   text-align: center;
 }
 
-.profile-card h1 {
-  color: #0f172a;
-  margin-bottom: 1rem;
+.about-label {
+  display: inline-block;
+
+  padding: 8px 12px;
+
+  border-radius: 100px;
+
+  background: #e5f2ea;
+  color: #176b4d;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
 }
 
-.profile-card p {
-  color: #334155;
-  line-height: 1.6;
+.about-hero h1 {
+  margin: 20px 0;
+
+  color: #193d2e;
+
+  font-size: clamp(42px, 6vw, 65px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+}
+
+.about-hero h1 span {
+  color: #176b4d;
+}
+
+.about-hero p {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #6d7d75;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-content {
+  width: min(1100px, 92%);
+
+  margin: auto;
+  padding: 100px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-profile {
+  padding: 35px;
+
+  border: 1px solid #e0eae4;
+  border-radius: 20px;
+
+  text-align: center;
+
+  background: #fbfdfc;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 22px;
+
+  border-radius: 28px;
+
+  background: #176b4d;
+  color: white;
+
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.about-profile h2 {
+  margin: 0;
+
+  color: #234b38;
+
+  font-size: 22px;
+}
+
+.about-profile p {
+  margin: 7px 0;
+
+  color: #7b8982;
+
+  font-size: 13px;
+}
+
+.profile-line {
+  width: 40px;
+  height: 2px;
+
+  margin: 20px auto;
+
+  background: #8dbba1;
+}
+
+.about-profile > span {
+  color: #65766e;
+
+  font-size: 12px;
+}
+
+.about-small-title,
+.values-heading > span,
+.about-story > span {
+  color: #176b4d;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.about-text h2 {
+  max-width: 700px;
+
+  margin: 13px 0 22px;
+
+  color: #214a37;
+
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.about-text p {
+  max-width: 720px;
+
+  color: #6e7d76;
+
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.values-section {
+  margin-top: 120px;
+}
+
+.values-heading h2 {
+  margin: 12px 0 35px;
+
+  color: #214a37;
+
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.values-grid article {
+  padding: 25px;
+
+  border: 1px solid #e2ebe6;
+  border-radius: 15px;
+}
+
+.values-grid article > span {
+  color: #a2b8aa;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.values-grid h3 {
+  margin: 28px 0 10px;
+
+  color: #2a523f;
+
+  font-size: 18px;
+}
+
+.values-grid p {
+  margin: 0;
+
+  color: #77857f;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.about-story {
+  max-width: 800px;
+
+  margin: 120px auto 0;
+
+  padding: 55px;
+
+  border-radius: 20px;
+
+  background: #f3f8f5;
+}
+
+.about-story h2 {
+  margin: 15px 0;
+
+  color: #234a37;
+
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.about-story p {
+  margin: 0;
+
+  color: #718079;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 850px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .about-hero {
+    padding: 70px 0;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .about-content {
+    padding: 70px 0;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story {
+    padding: 30px;
+  }
+
+  .about-story h2 {
+    font-size: 25px;
+  }
 }
