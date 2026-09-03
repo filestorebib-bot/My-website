@@ -1,24 +1,99 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import '../styles/navbar.css';
 
 export default function Navbar() {
-  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const getLinkStyle = (path) => ({
-    color: '#ffffff',
-    textDecoration: 'none',
-    padding: '8px 16px',
-    borderRadius: '6px',
-    fontWeight: '500',
-    backgroundColor: location.pathname === path ? '#2563eb' : 'transparent',
-    transition: 'background-color 0.2s ease'
-  });
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <nav style={{ backgroundColor: '#0f172a', padding: '1rem 2rem', display: 'flex', gap: '12px' }}>
-      <Link to="/" style={getLinkStyle('/')}>Home</Link>
-      <Link to="/notes" style={getLinkStyle('/notes')}>Notes</Link>
-      <Link to="/about" style={getLinkStyle('/about')}>About Me</Link>
-      <Link to="/contact" style={getLinkStyle('/contact')}>Contact</Link>
-    </nav>
+    <header className="navbar">
+      <div className="navbar-container">
+
+        <NavLink
+          to="/"
+          className="brand"
+          onClick={closeMenu}
+        >
+          <span className="brand-mark">B</span>
+
+          <span className="brand-text">
+            Bibash<span> Lamichhane</span>
+          </span>
+        </NavLink>
+
+        <button
+          className={`menu-button ${
+            menuOpen ? 'active' : ''
+          }`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          className={`navigation ${
+            menuOpen ? 'navigation-open' : ''
+          }`}
+        >
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/notes"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            Notes
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            About
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+            onClick={closeMenu}
+          >
+            Contact
+          </NavLink>
+
+          <NavLink
+            to="/notes"
+            className="nav-cta"
+            onClick={closeMenu}
+          >
+            Explore Notes
+          </NavLink>
+        </nav>
+
+      </div>
+    </header>
   );
 }
